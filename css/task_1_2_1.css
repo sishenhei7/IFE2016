@@ -1,0 +1,131 @@
+*{margin:0;padding:0;font-family: "Î¢ÈíÑÅºÚ";}
+header{
+	height:70px;
+	position:relative;
+	background-color:#333333;
+	background-image:url(../photo/task_1_2_1_a.png);
+	background-repeat:no-repeat;
+	background-position:2% 50%;
+}
+#header-link{
+	position: absolute;
+	top:35%;
+	right:1%;
+	list-style-type:none;
+}
+#header-link li{
+	font-size:14px;
+	font-weight:bold;
+	float: left;
+	padding:0px 30px 0px 0px;
+}
+header a{
+	color:#f88396;
+	text-decoration: none;
+}
+header a:visited{
+	color:#fff;
+	text-decoration: none;
+}
+#main{
+	padding:5px;
+	background-color:#dedede;
+	margin:0px 410px 0px 0px;
+}
+article{
+	line-height:2.8em;
+	display:block;
+	box-shadow: 2px 2px 0px #888888;
+	background-color:#fff;
+	padding:30px 20px;
+	margin:25px;
+}
+article h3{
+	font-weight:normal;
+	font-size:1.1em;
+	color:#676767;
+}
+article .autherTime{
+	font-size:0.8em;
+	color:#676767;
+}
+article p{
+	line-height:1.8em;
+	text-indent:2em;
+}
+article ul li{
+	line-height:1.8em;
+	list-style-type:none;
+}
+article .tablePic{
+	text-align:center;
+	border:thin solid black;
+	margin:20px;
+}
+article .tablePic img{
+	display:block;
+}
+article  ol{
+	margin:0px 0px 0px 60px;
+	
+}
+article ol li{
+	list-style-type:decimal;
+	line-height:1.8em;
+}
+article .tableArticle{
+	width:100%;
+	line-height:1.8em;
+	border-collapse:collapse;
+}
+article .tableArticle th{
+	color:#fff;
+	background-color:#000;
+}
+article .tableArticle .tableArticleTr{
+	font-weight:bold;
+	color:black;
+	background-color:#ccc;
+}
+aside{
+	position:absolute;
+	top:70px;
+	right:0px;
+	width:410px;
+	height:100%;
+	padding:5px;
+	background-color:#dedede;
+	padding-top:30px;
+}
+aside form{
+	display:table;
+	line-height:2em;
+	display:block;
+	box-shadow: 2px 2px 0px #888888;
+	background-color:#fff;
+	padding:30px 20px;
+	margin:25px;
+}
+aside .tableRow{
+	display:table-row;
+}
+aside .tableRow p{
+	display:table-cell;
+	margin:5px;
+}
+aside .commitButton{
+	color:#fff;
+	background-color:#3355d0;
+	width:100%;
+	height:3em;
+	border-radius:15px;
+}
+footer{
+	color:#fff;
+	background-color:#000;
+	width:100%;
+	height:60px;
+	text-align:center;
+	line-height:60px;
+	font-size:10px;
+}
