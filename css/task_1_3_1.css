@@ -1,1 +1,63 @@
-*{margin:0;padding:0;font-family: "微软雅黑";}
+*{margin:0px;padding:0px;font-family: "微软雅黑";}
+#main{
+	display:table;
+	background-color:#eee;
+	border:thin solid #999;
+	margin:25px;
+	border-spacing:20px;
+}
+#mainRow{
+	display:table-row;
+}
+#main .maincell{
+	display:table-cell;
+	vertical-align: top;
+}
+#mainLeft{
+	display:block;
+	width:200px;
+	border:thin solid #999;
+	padding:15px;
+	background-color:#fff;
+}
+#mainLeft figure{
+	position:relative;
+}
+#mainLeft figcaption{
+	font-weight:bold;
+	position:absolute;
+	left:130px;
+	top:0px;
+	width:60px;
+}
+#main article{
+	display:block;
+	border:thin solid #999;
+	padding:15px;
+	background-color:#fff;
+}
+#main article h2{
+	font-weight:normal;
+	font-size:1.3em;
+	color:#333;
+	margin:8px;
+}
+#main article hr{
+	color:grey;
+}
+#main article p{
+	color:grey;
+	line-height:1.5em;
+}
+#mainRight{
+	display:block;
+	width:120px;
+	border:thin solid #999;
+	background-color:#fff;
+}
+#mainRight figure{
+	margin:20px;
+	border:thin solid black;
+	width:80px;
+	height:80px;
+}
