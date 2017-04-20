@@ -1,1 +1,199 @@
 *{margin:0;padding:0;font-family: "微软雅黑";}
+/*=====header=======================*/
+header{
+	width:1280px;
+	height:65px;
+}
+/*-----login------*/
+header a.login{
+	float:right;
+	height:65px;
+	background-image:url(../photo/task_1_7_4.jpg);
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-size:15px 15px;
+	font-size:15px;
+	color:#e2574a;
+	padding-left:20px;
+	margin-right:60px;
+	line-height:4.3;
+	font-family:"黑体";
+}
+/*-----nav------*/
+header nav{
+	float:right;
+	height:65px;
+	list-style:none;
+	margin-right:10px;
+}
+header nav li{
+	float:left;
+	margin:0px 15px;
+}
+header nav li a{
+	display:block;
+	text-decoration:none;
+	height:65px;
+	width:65px;
+	font-size:15px;
+	color:grey;
+	line-height:4.3;
+	text-align:center;
+}
+header nav li a:hover,
+header nav li a:focus
+{
+	border-bottom:3px solid red;
+	color:#e2574a;
+}
+/*-----logo------*/
+header .logo{
+	height:65px;	
+	background-image:url(../photo/task_1_7_3.jpg);
+	background-repeat:no-repeat;
+	background-position:center left;
+	background-size:30px 30px;
+	padding-left:40px;
+	margin-left:60px;
+}
+header p{
+	font-size:20px;
+	line-height:3.5;
+	font-family:"黑体";
+}
+/*=====main=======================*/
+.main{
+	width:1280px;
+}
+/*-----banner------*/
+.banner{
+	background-image:url(../photo/task_1_7_2.jpg);
+	background-size:1280px 690px;
+	height:690px;
+	position:relative;
+	color:#fff;
+}
+.banner .banner-masking{
+	height:690px;
+	background-color:#000;
+	opacity:0.15;
+}
+.banner .banner-text{
+	position:absolute;
+	left:115px;
+	top:240px;
+}
+.banner .banner-text h3{
+	font-size:50px;
+	font-weight:lighter;
+}
+.banner .banner-text p{
+	font-size:20px;
+	margin-top:20px;
+}
+.banner .banner-button{
+	display:block;
+	position:absolute;
+	left:115px;
+	top:430px;
+	color:#fff;
+	text-decoration:none;
+	font-size:30px;
+	font-weight:lighter;
+	text-align:center;
+	line-height:2.2;
+	background-color:#e8504f;
+	height:70px;
+	width:330px;
+}
+/*-----slogan------*/
+.slogan{
+	height:250px;
+}
+.slogan .slogan-image{
+	float:left;
+	height:40px;
+	width:320px;
+	text-align:center;
+	padding:50px 0px 50px 0px;
+}
+.slogan .slogan-text{
+	float:left;
+	width:318px;
+	height:50px;
+	text-align:center;
+	border-right:2px solid grey;
+	margin-bottom:50px;
+	color:grey;
+	font-size:15px;
+}
+.slogan .slogan-text-special{
+	float:left;
+	width:320px;
+	height:50px;
+	text-align:center;
+	margin-bottom:50px;
+	color:grey;
+	font-size:15px;
+}
+/*-----do-not-know------*/
+.do-not-know{
+	height:360px;
+}
+.do-not-know figure{
+	height:270px;
+	text-align:center;
+	background-color:#ededed;
+	padding-top:90px;
+}
+.do-not-know figure figcaption{
+	font-size:50px;
+	color:grey;
+	margin:50px 0px 80px 0px;
+}
+/*-----find-information------*/
+.find-information{
+	height:400px;
+}
+
+
+/*-----activity------*/
+.activity{
+	height:540px;
+	background-color:f8f8f8;
+}
+.activity figure{
+	height:540px;
+	width:220px;
+	text-align:center;
+	float:left;
+	margin-left:35px;
+}
+.activity figure#activity-special{
+	height:540px;
+	width:220px;
+	text-align:center;
+	float:left;
+	margin-left:160px;
+}
+.activity figure div{
+	height:320px;
+	border:1px solid #ededed;
+	padding-top:10px;
+}
+.activity figure h4{
+	font-size:15px;
+	line-height:2.5;
+}
+.activity figure h4#activity-text-special{
+	font-size:20px;
+	line-height:1.5;
+}
+.activity figure p{
+	font-size:10px;
+	color:grey;
+}
+
+activity-text-special
+/*=====header=======================*/
+/*-----nav------*/
