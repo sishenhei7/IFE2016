@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>任务十三：零基础JavaScript编码（一）</title>
-		<link rel="stylesheet" type="text/css" href="../css/task_1_8_1.css" charset="utf-8">
-	</head>
-	<body>
-		<header>
-		</header>
-		<section class="main">任务十三：零基础JavaScript编码（一）
-		</section>
-		<footer>
-		</footer>
-	</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>任务十三：零基础JavaScript编码（一）</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+  <button id="button">确认填写</button>
+
+  <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+
+<script type="text/javascript">
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+(function() {
+function showAirQuality(){
+	var button=document.getElementById("button");
+	button.onclick=function(){
+		var airOutput=document.getElementById("aqi-display");
+		var airQuality=document.getElementById("aqi-input").value;
+		airOutput.firstChild.nodeValue=airQuality;
+	}
+}
+window.onload=showAirQuality;
+})();
+</script>
+</body>
 </html>
 
 
