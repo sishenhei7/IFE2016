@@ -26,7 +26,13 @@ var aqiData = [
 
 (function () {
 
-var aqiCriterion=60;
+  /*
+  在注释下方编写代码
+  遍历读取aqiData中各个城市的数据
+  将空气质量指数大于60的城市显示到aqi-list的列表中
+  */
+/*---------把大于等于aqiCriterion的城市数据筛选出来------*/
+var aqiCriterion=40;
 var aqiDataNumber=0;
 var aqiDataOrdered=Array();
 var aqiLength=aqiData.length;
@@ -37,7 +43,7 @@ for (var i=0;i<=aqiLength-1;i++){
 	}
 }
 aqiDataNumber--;
-
+/*---------把城市数据按照降序进行排序--------------------*/
 var aqiDataOrderedMid=Array();
 if (aqiDataNumber>=2){
 	for (var i=aqiDataNumber;i>=0;i--){
@@ -50,7 +56,7 @@ if (aqiDataNumber>=2){
 		}
 	}	
 } 
-
+/*---------把城市数据显示到aqi-list的列表中---------------*/
 aqiList=document.getElementById("aqi-list");
 if (aqiDataNumber!=0){
 	var aqiListRank=1;
@@ -67,10 +73,6 @@ if (aqiDataNumber!=0){
 	para.appendChild(text);
 	aqiList.appendChild(para);
 }
-
-
-  
-
 })();
 
 </script>
