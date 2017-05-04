@@ -40,7 +40,10 @@ var buttonClick = function() {
         if (/\D/g.test(golElement.inputNumber.value)) {
             alert("只能输入数字哦！！！");
             golElement.inputNumber.value = null;
-        } else {
+        } else if (golElement.inputNumber.value == "") {
+			alert("请先输入数字哦！！！");
+            golElement.inputNumber.value = null;
+		} else {
             var box = addBox(golElement.inputNumber.value);
             if (golElement.blocksSection.firstChild) {
                 golElement.blocksSection.insertBefore(box, golElement.blocksSection.firstChild);
@@ -54,7 +57,10 @@ var buttonClick = function() {
         if (/\D/g.test(golElement.inputNumber.value)) {
             alert("只能输入数字哦！！！");
             golElement.inputNumber.value = null;
-        } else {
+        } else if (golElement.inputNumber.value == "") {
+			alert("请先输入数字哦！！！");
+            golElement.inputNumber.value = null;
+		} else {
             var box = addBox(golElement.inputNumber.value);
             golElement.blocksSection.appendChild(box);
             golElement.inputNumber.value = null;
@@ -75,12 +81,12 @@ var buttonClick = function() {
 //点击红色框框会删除它的事件
 var boxRemove = function(event) {
     golElement.blocksSection.removeChild(event.target);
-}
+};
 
 function init() {
     golInitial();
     buttonClick();
-}
+};
 window.onload = function() {
     init();
 };
