@@ -1,6 +1,17 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
 //根据id查找元素的函数
 var $ = function(id) {
-    return document.getElementById(id)
+    return document.getElementById(id);
 };
 
 //建立闭包存放全局变量
@@ -22,7 +33,7 @@ var golInitial = function() {
 };
 
 //事件绑定函数，兼容浏览器差异
-function addEvent(element, event, listener) {
+var addEvent = function(element, event, listener) {
     if (element.addEventListener) {
         element.addEventListener(event, listener, false);
     }
@@ -57,7 +68,7 @@ var addBox = function(content) {
 
 //确保输入内容
 var boxText = function(){
-	if (golElement.hobbyText.value == "") {
+	if (golElement.hobbyText.value === "") {
 		alert("请输入内容啦！！！");
 		return false;
 	} else {
@@ -76,7 +87,7 @@ var removeDup = function(boxes , boxesLength){
 		}
 	return boxes;
 	}
-}
+};
 
 
 //返回所有子节点的内容（数组）
@@ -89,7 +100,7 @@ var childContents = function(nodeList){
 		list.push(content);
 	}
 	return list;
-}
+};
 
 //给各个按钮添加事件
 var buttonClick = function() {
@@ -99,29 +110,29 @@ var buttonClick = function() {
 
 //点击红色框框会删除它的事件
 var boxRemove = function(event) {
-	var e = event || window.event || arguments.callee.caller.arguments[0];
+	var e = event || window.event;
     e.target.parentNode.removeChild(e.target);
 };
 
 //鼠标悬停事件
 var boxMouseover = function(event){
-	var e = event || window.event || arguments.callee.caller.arguments[0];
+	var e = event || window.event;
 	e.target.insertBefore(document.createTextNode("删除"),e.target.firstChild);
 	e.target.style.backgroundColor = "red";
-}
+};
 
 //鼠标移开事件
 var boxMouseout = function(event){
-	var e = event || window.event || arguments.callee.caller.arguments[0];
+	var e = event || window.event;
 	e.target.removeChild(e.target.firstChild);
 	e.target.style.backgroundColor = "#61c5fe";
-}
+};
 
 //tag的键盘事件
 var tagKeyDown = function(){
 	var nullStr = 0;
 	var box, tagBoxText;
-	var e = event || window.event || arguments.callee.caller.arguments[0];
+	var e = event || window.event;
 	var tagList = childContents(golElement.tagboxesSection.getElementsByTagName("div"));
 	var tagCount = tagList.length;
 	if(e && (e.keyCode === 13 || e.keyCode === 32 || e.keyCode === 188)){
@@ -144,12 +155,12 @@ var tagKeyDown = function(){
 	golElement.inputTag.value = null;
 	golElement.inputTag.focus();
     }
-}
+};
 
 //兴趣爱好输入框事件
 var hobbyClick = function(){
 	var nullStr = 0;
-	var i, box, boxesLength;
+	var i, box, boxesLength, boxes;
 	var hobbyList = childContents(golElement.hobbyboxesSection.getElementsByTagName("div"));
 	var hobbyCount = hobbyList.length;
 	if (!boxText()) {
@@ -184,7 +195,7 @@ var hobbyClick = function(){
 function init() {
     golInitial();
     buttonClick();
-};
+}
 
 window.onload = function() {
     init();
