@@ -1,5 +1,5 @@
 //遍历动画辅助参数
-var i, delay;
+var i, delay, searchMark;
 
 //事件绑定函数，兼容浏览器差异
 var addEvent = function(element, event, listener) {
@@ -17,68 +17,77 @@ var addEvent = function(element, event, listener) {
 //前序遍历
 var preOrdering = function(Node){
 	i++;
-	var firstCh = Node.children[0];
-	var lastCh = Node.children[1];
 	setTimeout(function(){Node.style.backgroundColor = "rgb(204, 118, 216)";}, (2*i-1)*delay);
 	setTimeout(function(){Node.style.backgroundColor = "white";}, (2*i)*delay);
-	if (firstCh) {
-		preOrdering(firstCh);
-	}
-	if (lastCh) {
-		preOrdering(lastCh);
-	}
-}
-
-//中序遍历
-var inOrdering = function(Node){
-	var firstCh = Node.children[0];
-	var lastCh = Node.children[1];
-	if (firstCh) {
-		preOrdering(firstCh);
-	}
-	i++;
-	setTimeout(function(){Node.style.backgroundColor = "rgb(204, 118, 216)";}, (2*i-1)*delay);
-	setTimeout(function(){Node.style.backgroundColor = "white";}, (2*i)*delay);
-	if (lastCh) {
-		preOrdering(lastCh);
+	var j = 0;
+	while (Node.children[j]) {
+		if (Node.children[j].nodeName.toUpperCase() === "DIV"){
+			preOrdering(Node.children[j]);
+		}
+		j++;
 	}
 }
 
 //后序遍历
 var postOrdering = function(Node){
-	var firstCh = Node.children[0];
-	var lastCh = Node.children[1];
-	if (firstCh) {
-		preOrdering(firstCh);
-	}
-	if (lastCh) {
-		preOrdering(lastCh);
+	var j = 0;
+	while (Node.children[j]) {
+		if (Node.children[j].nodeName.toUpperCase() === "DIV"){
+			preOrdering(Node.children[j]);
+		}
+		j++;
 	}
 	i++;
 	setTimeout(function(){Node.style.backgroundColor = "rgb(204, 118, 216)";}, (2*i-1)*delay);
 	setTimeout(function(){Node.style.backgroundColor = "white";}, (2*i)*delay);
 }
 
+//查找节点
+var search = function(Node, searchText){
+	i++;
+	var nodeChildren = Node.children;
+//nodeChildren[0] && nodeChildren[0].nodeName.toUpperCase() === "SPAN" && 
+	if (nodeChildren[0] && nodeChildren[0].firstChild.nodeValue.trim() == searchText) {
+		setTimeout(function(){Node.style.backgroundColor = "red";}, (2*i-1)*delay);
+		setTimeout(function(){Node.style.backgroundColor = "red";}, (2*i)*delay);
+		searchMark = 1;
+	} else {
+		setTimeout(function(){Node.style.backgroundColor = "rgb(204, 118, 216)";}, (2*i-1)*delay);
+		setTimeout(function(){Node.style.backgroundColor = "white";}, (2*i)*delay);
+	}
+	var j = 0;
+	while (nodeChildren[j]) {
+		if (nodeChildren[j].nodeName.toUpperCase() === "DIV"){
+			search(nodeChildren[j], searchText);
+		}
+		j++;
+	}
+}
 
 function init() {
 	var divOne = document.getElementById("div-one");
 	var preButton = document.getElementById("preorder");
-	var inButton = document.getElementById("inorder");
 	var postButton = document.getElementById("postorder");
+	var searchButton = document.getElementById("search-button");
 	addEvent(preButton, "click", function(){
 		i = 1;
 		delay = parseInt(document.getElementById("delay").value, 10);
 		preOrdering(divOne);
 	})
-	addEvent(inButton, "click", function(){
-		i = 1;
-		delay = parseInt(document.getElementById("delay").value, 10);
-		inOrdering(divOne);
-	})
 	addEvent(postButton, "click", function(){
 		i = 1;
 		delay = parseInt(document.getElementById("delay").value, 10);
 		postOrdering(divOne);
+	})
+	addEvent(searchButton, "click", function(){
+		i = 1;
+		searchMark = 0;
+		searchText = document.getElementById("search-text").value.trim();
+		delay = parseInt(document.getElementById("delay").value, 10);
+		search(divOne, searchText);
+		if (searchMark === 0) {
+			setTimeout(function(){alert("很可惜没有找到！");}, (2*i+1)*delay);
+		}
 	})
 }
 window.onload=function(){

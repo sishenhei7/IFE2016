@@ -8,25 +8,44 @@ div {
 }
 
 div#div-one {
-	height:200px;
-	width:70%;
-	margin-left:15%;
+	height:250px;
+	width:84%;
+	margin-left:8%;
 	margin-top:50px;
 }
 
 div.div-two {
+	height:200px;
+	width:38%;	
+}
+
+div.div-three {
+	height:200px;
+	width:15%;	
+}
+
+div.div-four {
 	height:150px;
 	width:45%;	
 }
 
-div.div-three {
-	height:100px;
-	width:45%;	
+div.div-five {
+	height:150px;
+	width:20%;	
 }
 
-div.div-four {
+div.div-six {
+	height:100px;
+	width:18%;	
+}
+
+div.div-seven {
 	height:50px;
-	width:45%;	
+	width:30%;	
+}
+span {
+	display:box;
+	align-self: flex-start;
 }
 
 label {
