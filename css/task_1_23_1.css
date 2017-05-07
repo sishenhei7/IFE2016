@@ -62,11 +62,11 @@ button {
 	height:50px;
 	width:100px;
 	background-color: rgb(105, 244, 198);
-	border:1px solid rgb(105, 244, 198);
+	border:none;
 	border-radius:10%;
 	cursor:pointer;
 }
 
 button:hover{
-	background-color: yellow;
+	border:2px solid #e66da0;
 }
