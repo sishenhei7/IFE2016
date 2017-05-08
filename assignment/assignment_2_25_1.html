@@ -7,29 +7,24 @@
     <script src="../js/task_1_25_1.js"></script>
   </head>
 <body>
-	<div id="div-one">
-	Supper
-	</div>
-	<fieldset>
-		<legend>遍历动画</legend>
-		<label>动画间隔:</label>
-		<input type = "text" id="delay" value="200">
-		<button id="preorder">前序</button>
-		<button id="postorder">后序</button>
-	</fieldset>
 	<fieldset>
 		<legend>查找内容</legend>
 		<label>查找内容:</label>
 		<input type = "text" id="search-text">
 		<button id="search-button">查找</button>
+		<button id="reset-button">reset</button>
+		<label id="tips">提示：双击可展开节点</label>
 	</fieldset>
 	<fieldset>
 		<legend>操作</legend>
 		<label>添加内容:</label>
 		<input type = "text" id="add-text">
 		<button id="remove-button">删除</button>
-		<button id="add-button">添加</button>
+		<button id="add-child">添加子节点</button>
+		<button id="add-sibling">添加兄弟节点</button>
 	</fieldset>
+	<div id="main">
+	</div>
 </body>
 </html>
 

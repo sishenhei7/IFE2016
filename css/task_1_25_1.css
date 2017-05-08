@@ -1,21 +1,4 @@
 *{margin:0;padding:0;font-family: "微软雅黑";}
-
-div {
-	display:flex;
-	border:1px solid black;
-	justify-content: space-around;
-	align-items: center;
-	flex:auto;
-	margin: 0 5px 0 5px;
-}
-
-div#div-one {
-	height:250px;
-	width:1400px;
-	margin-left:130px;
-	margin-top:50px;
-}
-
 label {
 	margin-left:200px;
 }
@@ -35,6 +18,14 @@ button {
 	border-radius:55px;
 	cursor:pointer;
 }
+button#add-child {	
+	width:100px;
+	border-radius:25px;
+}
+button#add-sibling {	
+	width:120px;
+	border-radius:25px;
+}
 fieldset {
 	margin-left:130px;
 	margin-top:30px;
@@ -45,4 +36,15 @@ fieldset {
 
 button:hover{
 	border:2px solid #e66da0;
+}
+
+#main {
+	margin-left:130px;
+	margin-top:30px;
+	cursor:pointer;
+}
+#tips {
+	color:rgb(192, 44, 56);
+	font-size:20px;
+	opacity:0.5;
 }
