@@ -135,6 +135,7 @@ var addBox = function(addText, parentNode){
 }
 
 function init() {
+	var start = new Date();
 	var divOne = document.getElementById("div-one");
 	createTree(divOne);	
 	var preButton = document.getElementById("preorder");
@@ -143,16 +144,45 @@ function init() {
 	var addButton = document.getElementById("add-button");
 	var removeButton = document.getElementById("remove-button");
 	addEvent(preButton, "click", function(){
+		var start = new Date(); 
 		i = 1;
 		delay = parseInt(document.getElementById("delay").value, 10);
 		preOrdering(divOne);
+		var stop = new Date();
+		var time = "本次操作一共用了" + (stop - start) + "ms";
+		var body = preButton.parentNode;
+		var loadTime = document.createElement("div");
+		loadTime.appendChild(document.createTextNode(time));
+		body.appendChild(loadTime);
+		loadTime.style.display = "inline" ;
+		loadTime.style.textAlign = "center" ;
+		loadTime.style.border = "none" ;
+		loadTime.style.color = "grey" ;
+		setTimeout(function(){
+			body.removeChild(loadTime);
+		},3000)
 	})
 	addEvent(postButton, "click", function(){
+		var start = new Date(); 
 		i = 1;
 		delay = parseInt(document.getElementById("delay").value, 10);
 		postOrdering(divOne);
+		var stop = new Date();
+		var time = "本次操作一共用了" + (stop - start) + "ms";
+		var body = postButton.parentNode;
+		var loadTime = document.createElement("div");
+		loadTime.appendChild(document.createTextNode(time));
+		body.appendChild(loadTime);
+		loadTime.style.display = "inline" ;
+		loadTime.style.textAlign = "center" ;
+		loadTime.style.border = "none" ;
+		loadTime.style.color = "grey" ;	
+		setTimeout(function(){
+			body.removeChild(loadTime);
+		},3000)		
 	})
 	addEvent(searchButton, "click", function(){
+		var start = new Date(); 
 		i = 1;
 		searchMark = 0;
 		searchText = document.getElementById("search-text").value.trim();
@@ -161,8 +191,22 @@ function init() {
 		if (searchMark === 0) {
 			setTimeout(function(){alert("很可惜没有找到！");}, (2*i+1)*delay);
 		}
+		var stop = new Date();
+		var time = "本次操作一共用了" + (stop - start) + "ms";
+		var body = searchButton.parentNode;
+		var loadTime = document.createElement("div");
+		loadTime.appendChild(document.createTextNode(time));
+		body.appendChild(loadTime);
+		loadTime.style.display = "inline" ;
+		loadTime.style.textAlign = "center" ;
+		loadTime.style.border = "none" ;
+		loadTime.style.color = "grey" ;	
+		setTimeout(function(){
+			body.removeChild(loadTime);
+		},3000)
 	})
 	addEvent(addButton, "click", function(event){
+		var start = new Date(); 
 		var addText = document.getElementById("add-text").value;
 		var markListCopy = markList;
 		markListLength = markListCopy.length;
@@ -173,8 +217,22 @@ function init() {
 		} else {
 			alert("请先选中节点!!");
 		}
+		var stop = new Date();
+		var time = "本次操作一共用了" + (stop - start) + "ms";
+		var body = addButton.parentNode;
+		var loadTime = document.createElement("div");
+		loadTime.appendChild(document.createTextNode(time));
+		body.appendChild(loadTime);
+		loadTime.style.display = "inline" ;
+		loadTime.style.textAlign = "center" ;
+		loadTime.style.border = "none" ;
+		loadTime.style.color = "grey" ;	
+		setTimeout(function(){
+			body.removeChild(loadTime);
+		},3000)
 	})
 	addEvent(removeButton, "click", function(event){
+		var start = new Date(); 
 		var markListCopy = markList;
 		markListLength = markListCopy.length;
 		if (markListLength > 0) {
@@ -185,6 +243,19 @@ function init() {
 		} else {
 			alert("请先选中节点!!");
 		}
+		var stop = new Date();
+		var time = "本次操作一共用了" + (stop - start) + "ms";
+		var body = removeButton.parentNode;
+		var loadTime = document.createElement("div");
+		loadTime.appendChild(document.createTextNode(time));
+		body.appendChild(loadTime);
+		loadTime.style.display = "inline" ;
+		loadTime.style.textAlign = "center" ;
+		loadTime.style.border = "none" ;
+		loadTime.style.color = "grey" ;	
+		setTimeout(function(){
+			body.removeChild(loadTime);
+		},3000)
 	})
 //给divOne绑定点击事件
 //	addEvent(divOne, "click", function(event){
@@ -214,6 +285,18 @@ function init() {
 //原因有2个：
 //第一个是重复绑定；
 //第二个是JavaScript的样式和css样式独立，所以不能用javaScript语句来判断css样式
+	var stop = new Date();
+	var time = "本次网页加载一共用了" + (stop - start) + "ms";
+	var body = document.getElementsByTagName("body")[0];
+	var loadTime = document.createElement("div");
+	loadTime.appendChild(document.createTextNode(time));
+	body.appendChild(loadTime);
+	loadTime.style.textAlign = "center" ;
+	loadTime.style.border = "none" ;
+	loadTime.style.color = "grey" ;	
+	setTimeout(function(){
+		body.removeChild(loadTime);
+	},3000)
 }
 window.onload=function(){
 	init();
