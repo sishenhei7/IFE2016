@@ -3,10 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>任务二十九：表单（一）单个表单项的检验</title>
-    <script src="../js/task_1_26_1.js"></script>
+	<link  rel="stylesheet" type="text/css" href="../css/task_1_29_1.css" charset="utf-8">
+    <script src="../js/task_1_29_1.js"></script>
   </head>
 <body>
-任务二十九：表单（一）单个表单项的检验
+	<fieldset>
+		<label>名称<input type="text" id="string-length"></label>
+		<div id="length-tip">必填，长度为4~16个字符</div>
+	</fieldset>
+	<fieldset>
+		<label>名称<input type="text" id="string-null"></label>
+		<div id="null-tip">姓名不能为空</div>
+	</fieldset>
+	<fieldset>
+		<label>名称<input type="text" id="string-format"></label>
+		<div id="format-tip">名称格式需要以汉字或字母开头</div>
+	</fieldset>
 
 </body>
 </html>
