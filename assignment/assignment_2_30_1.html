@@ -7,19 +7,29 @@
     <script src="../js/task_1_30_1.js"></script>
   </head>
 <body>
-	<fieldset>
-		<label>名称<input type="text" id="string-length"></label>
-		<div id="length-tip">必填，长度为4~16个字符</div>
-	</fieldset>
-	<fieldset>
-		<label>名称<input type="text" id="string-null"></label>
-		<div id="null-tip">姓名不能为空</div>
-	</fieldset>
-	<fieldset>
-		<label>名称<input type="text" id="string-format"></label>
-		<div id="format-tip">名称格式需要以汉字或字母开头</div>
-	</fieldset>
-
+	<form>
+		<fieldset>
+			<label>名称<input type="text" id="name"></label>
+			<div>长度为4~16个字符，开头必须为汉字或字母</div>
+		</fieldset>
+		<fieldset>
+			<label>密码<input type="password" id="password"></label>
+			<div>长度为4~16个字符</div>
+		</fieldset>
+		<fieldset>
+			<label>密码确认<input type="password" id="password-confirm"></label>
+			<div>需要和上面的密码保持一致</div>
+		</fieldset>
+		<fieldset>
+			<label>邮箱<input type="text" id="mail"></label>
+			<div>格式为:xxxxxxxxxx@xxxxx.com</div>
+		</fieldset>
+		<fieldset>
+			<label>手机<input type="text" id="cellphone"></label>
+			<div>11位数字</div>
+		</fieldset>
+		<button id="commit">提交</button>
+	</form>
 </body>
 </html>
 
