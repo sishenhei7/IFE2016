@@ -1,0 +1,97 @@
+*{margin:0;padding:0;font-family: "微软雅黑";}
+/*==========student-field===========*/
+fieldset#student-field {
+	margin: 30px 0px 0px 130px;
+	height: 50px;
+	border: none;
+	position:relative;
+	font-size:24px;
+}
+fieldset#student-field label {
+	margin-left: 200px;
+}
+span.circle-style {
+	display:inline-block;
+	width: 25px;
+	height: 25px;
+	background: url(../photo/task_2_31_2.jpg) no-repeat center center;
+}
+span#circle-hidden1 {
+	display:inline-block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 200px;
+}
+span#circle-hidden2 {
+	display:inline-block;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 510px;
+}
+
+input#student,input#no-student  {
+	display: none;
+}
+
+input#student:checked+span,input#no-student:checked+span  {
+	width: 25px;
+	height: 25px;
+	background: url(../photo/task_2_31_1.jpg) no-repeat center center;
+}
+
+/*==========university-field===========*/
+fieldset#university-field {
+	margin: 30px 0px 0px 200px;
+	height: 50px;
+	border: none;
+	display: block;
+}
+
+fieldset#university-field label {
+	margin-left:0px;
+	font-size:25px;
+}
+
+fieldset#university-field select{
+	margin-left:75px;
+	height: 40px;
+	width: 200px;
+	border: 1px solid #ded9d9;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px #ded9d9;
+	font-size:20px;
+}
+
+fieldset#university-field select#university {
+	margin-left:100px;
+	width: 300px;
+}
+
+fieldset#university-field span {
+	display: block;
+}
+
+/*==========employment-field===========*/
+fieldset#employment-field {
+	margin: 30px 0px 0px 200px;
+	height: 50px;
+	border: none;
+	display: none;
+}
+fieldset#employment-field label {
+	margin-left:0px;
+	font-size:25px;
+}
+input#employment {
+	margin-left:30px;
+	height: 40px;
+	width: 605px;
+	border: 1px solid #ded9d9;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px #ded9d9;
+	font-size:20px;
+}
+
+
