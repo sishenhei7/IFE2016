@@ -1,0 +1,157 @@
+*{margin:0;padding:0;font-family: "微软雅黑";}
+
+section {
+	width: 930px;
+}
+
+#universe {
+	height: 600px;
+	width: 450px;
+	background-color: black;
+	position: relative;
+	margin: 10px 0px 0px 10px;
+}
+
+#star {
+	height: 240px;
+	width: 240px;
+	border-radius: 240px;
+	background-color: blue;
+	position: absolute;
+	left: 105px;
+	top: 180px;
+}
+
+#command-area {
+	width: 840px;
+	border-top: 2px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin: 25px 0px 0px 10px;
+	padding: 10px 10px;
+}
+
+.ship {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 25s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+.ship-qianjin {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 33s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+.ship-benteng {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 20s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+.ship-chaoyue {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 12s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+@keyframes rotate {
+	0% {
+		transform: translateX(225px) translateY(100px) rotate(0deg);
+	}
+	
+	100% {
+		transform: translateX(225px) translateY(100px) rotate(-360deg);
+	}
+}
+
+.ship-energy {
+	position: absolute;
+	background-color: blue;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;	
+	opacity: 0.5;
+}
+
+button {
+	padding:0px 15px;
+	background-color: white;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 1px solid #bababa;
+	margin-left: 10px;
+}
+
+#command-subarea {
+	width: 840px;
+	border-top: 2px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin: 0px 0px 0px 10px;
+	padding: 10px 10px;
+}
+
+#console-area {
+	width: 840px;
+	border-top: 2px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 10px;
+}
+
+#condition-table {
+	width: 450px;
+	float: right;
+	margin-top: 50px;
+}
+
+#condition-table div {
+	width: 80px;
+	height: 30px;
+	border: 1px solid #bababa;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+}
+
+#condition-table div.header {
+	background-color: #bababa;
+}
+
+
+
+
