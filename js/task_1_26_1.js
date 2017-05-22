@@ -123,7 +123,7 @@ commander = {
 }
 
 //模仿丢包率
-var packetLoss = function(packetLossRate){
+var packetLoss = function(packetLossRate, transmitTime){
 	var randomNumber = Math.random();
 	if (randomNumber >= packetLossRate) {
 		return true;
@@ -135,9 +135,11 @@ var packetLoss = function(packetLossRate){
 //给所有飞船下达命令
 var controlAllAirship = function(shipcommand){
 	if (packetLoss(0.3)) {
-		for (var i = 0, j = commander.ships.length; i < j; i++) {
-			commander.ships[i].signalSystem().getSignal(shipcommand);
-		}
+		setTimeout(function(){
+			for (var i = 0, j = commander.ships.length; i < j; i++) {
+				commander.ships[i].signalSystem().getSignal(shipcommand);
+			}
+		}, 1000);
 	}
 }
 
