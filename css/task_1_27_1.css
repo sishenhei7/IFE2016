@@ -2,7 +2,7 @@
 
 #universe {
 	height: 600px;
-	width: 450px;
+	width: 840px;
 	background-color: black;
 	position: relative;
 	margin: 10px 0px 0px 10px;
@@ -19,9 +19,12 @@
 }
 
 #command-area {
-	width: 450px;
+	width: 840px;
 	border-top: 2px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
 	margin: 25px 0px 0px 10px;
+	padding: 10px 10px;
 }
 
 .ship {
@@ -32,6 +35,48 @@
 	border-radius: 25px;
 	transform-origin: 0px 200px;
 	animation: rotate 25s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+.ship-qianjin {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 33s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+.ship-benteng {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 20s linear infinite;
+	font-size: 25px;
+	text-align:center;
+	line-height: 50px;
+	animation-play-state: paused;
+}
+
+.ship-chaoyue {
+	position: absolute;
+	background-color: grey;
+	width: 120px;
+	height: 50px;
+	border-radius: 25px;
+	transform-origin: 0px 200px;
+	animation: rotate 12s linear infinite;
 	font-size: 25px;
 	text-align:center;
 	line-height: 50px;
@@ -66,9 +111,23 @@ button {
 	margin-left: 10px;
 }
 
+#command-subarea {
+	width: 840px;
+	border-top: 2px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin: 0px 0px 0px 10px;
+	padding: 10px 10px;
+}
 
-
-
+#console-area {
+	width: 840px;
+	border-top: 2px solid grey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 10px;
+}
 
 
 
