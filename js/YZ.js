@@ -43,9 +43,9 @@ function extend(subClass, superClass){
 }
 window['YZ']['extend'] = bindFunction;
 
-//
-
-
+//获取元素对象
+function g(el) { return document.getElementById(el); }
+window['YZ']['g'] = g;
 
 
 
