@@ -47,7 +47,7 @@ window['YZ']['extend'] = bindFunction;
 function g(el) { return document.getElementById(el); }
 window['YZ']['g'] = g;
 
-
+//extend方法？
 
 
 
