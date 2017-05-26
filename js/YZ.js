@@ -14,11 +14,12 @@ if(!window['YZ']) {
 var $ = function(str) {
 	return document.querySelector(str);
 }
-window['YZ']['$'] = bindFunction;
+window['YZ']['$'] = $;
+
 var $$ = function(str) {
 	return document.querySelectorAll(str);
 }
-window['YZ']['$$'] = bindFunction;
+window['YZ']['$$'] = $$;
 
 //事件绑定函数，兼容浏览器差异
 function addEvent(element, event, listener) {
@@ -32,7 +33,7 @@ function addEvent(element, event, listener) {
         element["on" + event] = listener;
     }
 }
-window['YZ']['addEvent'] = bindFunction;
+window['YZ']['addEvent'] = addEvent;
 
 //基于一个类superClass,使subClass继承它
 function extend(subClass, superClass){
@@ -41,13 +42,23 @@ function extend(subClass, superClass){
 	subClass.prototype = new F();
 	subClass.prototype.constructor = subClass;
 }
-window['YZ']['extend'] = bindFunction;
+window['YZ']['extend'] = extend;
 
 //获取元素对象
 function g(el) { return document.getElementById(el); }
 window['YZ']['g'] = g;
 
-//extend方法？
+//获取元素到document顶部的距离
+function getTop (ele) {
+	var offset = ele.offsetTop;
+	if(ele.offsetParent!=null) {
+		offset += getTop(ele.offsetParent);
+	}
+	return offset;	
+}
+window['YZ']['getTop'] = getTop;
+
+//extend方法？库的扩展方法？
 
 
 
