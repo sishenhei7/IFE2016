@@ -62,7 +62,11 @@
 	color: red;	
 }
 
-#calendar-table tbody td.grey {
+#calendar-table tbody td.grey-before {
+	color: #bababa;	
+}
+
+#calendar-table tbody td.grey-after {
 	color: #bababa;	
 }
 
@@ -70,4 +74,3 @@
 	background-color: #e1395b;	
 	color: white;
 }
-

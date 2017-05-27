@@ -114,6 +114,14 @@ calendar.prototype.getSelected = function(date) {
 
 //给calendar标签添加值
 calendar.prototype.writeCalendar = function() {
+	//更新banner
+	var section = this.myParent.getElementsByTagName('section')[0];
+	var sectionDiv = section.getElementsByTagName('div')[0];
+	sectionDiv.innerHTML = null;
+	var fixedDate = this.myDate.replace('-', '年') + '月';
+	sectionDiv.appendChild(document.createTextNode(fixedDate));	
+	
+	//更新table
 	var thead = this.myParent.getElementsByTagName('thead')[0];
 	var theadTds = thead.getElementsByTagName('td');
 	var tbody = this.myParent.getElementsByTagName('tbody')[0];
@@ -141,34 +149,34 @@ calendar.prototype.writeCalendar = function() {
 		} else if (i < myDay) {
 			
 			tbodyTds[i].innerHTML = myLastDays + i - myDay + 1;
-			tbodyTds[i].className = 'grey';
+			tbodyTds[i].className = 'grey-before';
 			
 		} else if (i >= (myDay + myDays)) {
 			
 			tbodyTds[i].innerHTML = i - myDay - myDays + 1;
-			tbodyTds[i].className = 'grey';	
+			tbodyTds[i].className = 'grey-after';	
 		}
 	}
 	
 	this.getSelected();
-	this.getTbodyEvent();	
 }
 
 //给calendar左右按钮绑定事件
-calendar.prototype.getBannerEvent = function() {
-	var thead = this.myParent.getElementsByTagName('section')[0];
-	var theadButtons = thead.getElementsByTagName('button');
-	var theadDiv = thead.getElementsByTagName('div')[0];
+calendar.prototype.getEvent = function() {
+	var section = this.myParent.getElementsByTagName('section')[0];
+	var sectionButtons = section.getElementsByTagName('button');
+	var tbody = this.myParent.getElementsByTagName('tbody')[0];
+	var tbodyTds = tbody.getElementsByTagName('td');		
 	var that = this;
 
-	for (var i = 0, j = theadButtons.length; i < j; i++) {
-		addEvent(theadButtons[i], 'click', (function(k){
+	//绑定banner元素
+	for (var i = 0, j = sectionButtons.length; i < j; i++) {
+		addEvent(sectionButtons[i], 'click', (function(k){
 			//循环绑定用闭包解决
 			return (function () {
 				var date = new Date(that.myDate);
 				var year = date.getFullYear();
-				var month = date.getMonth();				
-				theadDiv.innerHTML = null;		
+				var month = date.getMonth();					
 				
 				switch(k){
 					case 0 :
@@ -188,29 +196,46 @@ calendar.prototype.getBannerEvent = function() {
 						break;	
 				}	
 				that.myDate = date.getFullYear() + '-' + (date.getMonth() + 1);
-				var fixedDate = that.myDate.replace('-', '年') + '月';
-				theadDiv.appendChild(document.createTextNode(fixedDate));
 				that.writeCalendar();
 			});
 		})(i));
 	}
-}
-	
-//给calendar的table部分绑定事件
-calendar.prototype.getTbodyEvent = function() {
-	var that = this;
-	var tbody = this.myParent.getElementsByTagName('tbody')[0];
-	var tbodyTds = tbody.getElementsByTagName('td');	
 
+	//绑定table元素
 	for (var i = 0, j = tbodyTds.length; i < j; i++) {
-		that = this;		
-		if (!tbodyTds[i].className.includes('grey')) {
+		that = this;
+		
+		if (tbodyTds[i].className.includes('grey-before')) {
+			addEvent(tbodyTds[i], 'click', function(event){
+				var e = event || window.event;
+				var day = e.target.innerText;	
+				var date = new Date(that.myDate);
+				
+				date.setMonth(date.getMonth() - 1);
+				that.myDate = date.getFullYear() + '-' + (date.getMonth() + 1);
+				that.myNowDate = that.myDate + '-' + day;
+				that.writeCalendar();
+			});	
+			
+		} else if (tbodyTds[i].className.includes('grey-after')) {
+			addEvent(tbodyTds[i], 'click', function(event){
+				var e = event || window.event;
+				var day = e.target.innerText;	
+				var date = new Date(that.myDate);
+				
+				date.setMonth(date.getMonth() + 1);
+				that.myDate = date.getFullYear() + '-' + (date.getMonth() + 1);
+				that.myNowDate = that.myDate + '-' + day;
+				that.writeCalendar();
+			});
+			
+		} else {
 			addEvent(tbodyTds[i], 'click', function(event){
 				var e = event || window.event;
 				var day = e.target.innerText;
 				that.myNowDate = that.myDate + '-' + day;
 				that.getSelected();
-			});	
+			});			
 		}
 	}
 }
@@ -219,11 +244,11 @@ calendar.prototype.getTbodyEvent = function() {
 calendar.prototype.init = function() {
 	this.createCalendar();
 	this.writeCalendar();
-	this.getBannerEvent();
+	this.getEvent();
 }
 	
 function init() {
-	var testCalendar = new calendar('2017-3-16', $('main'));
+	testCalendar = new calendar('2017-3-16', $('main'));
 	testCalendar.init();
 }
 
