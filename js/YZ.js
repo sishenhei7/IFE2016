@@ -58,6 +58,14 @@ function getTop (ele) {
 }
 window['YZ']['getTop'] = getTop;
 
+//创建一个类型为type的元素，内容为str，加在ele的子节点后面
+var createChild = function(type, str, ele){
+	var myEle = document.createElement(type);
+	myEle.appendChild(document.createTextNode(str));
+	ele.appendChild(myEle);
+}
+window['YZ']['createChild'] = createChild;
+
 //extend方法？库的扩展方法？
 
 
