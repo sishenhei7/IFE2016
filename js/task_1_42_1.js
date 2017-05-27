@@ -219,7 +219,6 @@ calendar.prototype.colorDatePeriod = function() {
 	}
 }
 
-
 //判断datePeriod的区间是否涂色
 calendar.prototype.checkeDatePeriod = function() {
 	if (this.datePeriod.length === 2) {
