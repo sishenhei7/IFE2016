@@ -1,0 +1,142 @@
+*{margin:0;padding:0;font-family: "微软雅黑";}
+
+.album-1 {
+	height: 375px;
+	width: 500px;
+}
+
+.album-1 img:first-child {
+	height: 100%;
+	width: 100%;
+}
+
+.album-2 {
+	height: 375px;
+	width: 500px;
+}
+
+.album-2 img:first-child {
+	height: 100%;
+	width: 100%;
+	clip-path: polygon(0 0, 67% 0, 33% 100%, 0 100%);
+	-webkit-clip-path: polygon(0 0, 67% 0, 33% 100%, 0 100%);
+}
+
+.album-2 img:last-child {
+	margin-left: -100%;
+	height: 100%;
+	width: 100%;
+	clip-path: polygon(67% 0, 100% 0, 100% 100%, 33% 100%);
+	-webkit-clip-path: polygon(67% 0, 100% 0, 100% 100%, 33% 100%);
+}
+
+.album-3 {
+	height: 375px;
+	width: 500px;
+}
+
+.album-3 img:nth-child(1) {
+	float: left;
+	height: 100%;
+	width: 67%;
+}
+
+.album-3 img:nth-child(1) ~ img {
+	float: left;
+	height: 50%;
+	width: 33%;
+}
+
+.album-4 {
+	height: 375px;
+	width: 500px;
+}
+
+.album-4 img{
+	float: left;
+	height: 50%;
+	width: 50%;
+}
+
+.album-5 {
+	height: 375px;
+	width: 500px;
+	position: relative;
+}
+
+.album-5 img:nth-child(1) {
+	position: absolute;
+	height: 67%;
+	width: 67%;
+}
+
+.album-5 img:nth-child(2){
+	position: absolute;
+	height: 33%;
+	width: 33%;
+	left: 67%;
+}
+
+.album-5 img:nth-child(3){
+	position: absolute;
+	height: 33%;
+	width: 33%;
+	top: 67%;
+}
+
+.album-5 img:nth-child(4){
+	position: absolute;
+	height: 33%;
+	width: 34%;
+	left: 33%;
+	top: 67%;
+}
+
+.album-5 img:nth-child(5){
+	position: absolute;
+	height: 67%;
+	width: 33%;
+	left: 67%;
+	top: 33%;
+}
+
+.album-6 {
+	height: 375px;
+	width: 500px;
+}
+
+.album-6 img:nth-child(1){
+	float: left;
+	height: 67%;
+	width: 67%;
+}
+
+.album-6 img:nth-child(2){
+	float: left;
+	height: 34%;
+	width: 33%;
+}
+
+.album-6 img:nth-child(3){
+	float: left;
+	height: 33%;
+	width: 33%;
+}
+
+.album-6 img:nth-child(4){
+	float: left;
+	height: 33%;
+	width: 34%;
+}
+
+.album-6 img:nth-child(5){
+	float: left;
+	height: 33%;
+	width: 33%;
+}
+
+.album-6 img:nth-child(6){
+	float: left;
+	height: 33%;
+	width: 33%;
+}
